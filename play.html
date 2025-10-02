@@ -1,28 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bouncy Heading</title>
+  <style>
+    body {
+      background: #111;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .bounce-text {
+      display: flex;
+      gap: 5px;
+      font-size: 3rem;
+      font-weight: bold;
+      color: #fff;
+    }
+
+    .bounce-text span {
+      opacity: 0;
+      transform: translateY(-40px);
+      display: inline-block;
+      animation: bounceIn 0.6s ease-out forwards;  /* forwards = stay at final state */
+    }
+
+    @keyframes bounceIn {
+      0%   { opacity: 0; transform: translateY(-40px); }
+      60%  { opacity: 1; transform: translateY(10px); }
+      80%  { transform: translateY(-5px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    /* stagger */
+    .bounce-text span:nth-child(1) { animation-delay: 0s; }
+    .bounce-text span:nth-child(2) { animation-delay: 0.1s; }
+    .bounce-text span:nth-child(3) { animation-delay: 0.2s; }
+    .bounce-text span:nth-child(4) { animation-delay: 0.3s; }
+    .bounce-text span:nth-child(5) { animation-delay: 0.4s; }
+  </style>
 </head>
 <body>
-    <div id="ori">
-        <div id="track">
-                <img src="volume-1.jpg" id="vol-1" class="vols">
-                <img src="volume-2.jpg" id="vol-2" class="vols">
-                <img src="volume-3.jpg" id="vol-3" class="vols">
-                <img src="volume-4.jpg" id="vol-4" class="vols">
-                <img src="volume-5.jpg" id="vol-5" class="vols">
-                <img src="volume-6.jpg" id="vol-6" class="vols">
-                <img src="volume-7.jpg" id="vol-7" class="vols">
-                <img src="volume-8.jpg" id="vol-8" class="vols">
-                <img src="volume-9.jpg" id="vol-9" class="vols">
-                <img src="volume-10.jpg" id="vol-10" class="vols">
-                <img src="volume-11.jpg" id="vol-11" class="vols">
-                <img src="volume-12.jpg" id="vol-12" class="vols">
-                <img src="volume-13.jpg" id="vol-13" class="vols">
-        </div>
-    </div>
+  <h2 class="bounce-text">
+    <span>H</span><span>e</span><span>l</span><span>l</span><span>o</span>
+  </h2>
 </body>
 </html>

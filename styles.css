@@ -1,38 +1,32 @@
 
-body{
-    padding: 0;
-    margin: 0;
-    background-color: black;
+
+.bounce-text {
+  display: flex;              /* so spans sit side by side */
+  gap: 5px;                   /* small space between letters */
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #fff;
 }
 
-#ori{
-    width: 100%;
-    overflow: hidden;
-    background-color: black;
-    display: flex;
-    margin: auto;
+.bounce-text span {
+  opacity: 0;
+  transform: translateY(-30px);   /* start above */
+  display: inline-block;          /* allow transform on each letter */
+  animation: bounceIn 0.6s ease-out forwards;
 }
 
-#track{
-    display: flex;
-    gap: 10px;
-    animation: scroll 25s ease-in-out infinite alternate;
-    align-items: center;
+/* bounce animation */
+@keyframes bounceIn {
+  0%   { opacity: 0; transform: translateY(-30px); }
+  60%  { opacity: 1; transform: translateY(10px); }  /* overshoot down */
+  80%  { transform: translateY(-5px); }              /* bounce up */
+  100% { transform: translateY(0); }                 /* settle */
 }
 
-#track img{
-    display: flex;
-    width: 300px;
-    height: auto;
-    margin: 1px;
-    border-radius: 10px;
-}
+/* stagger animation for each letter */
+.bounce-text span:nth-child(1) { animation-delay: 0s;   }
+.bounce-text span:nth-child(2) { animation-delay: 0.1s; }
+.bounce-text span:nth-child(3) { animation-delay: 0.2s; }
+.bounce-text span:nth-child(4) { animation-delay: 0.3s; }
+.bounce-text span:nth-child(5) { animation-delay: 0.4s; }
 
-@keyframes scroll{
-    0%{
-        transform: translateX(0);
-    }
-    100%{
-        transform: translateX(-2510px);
-    }
-}
