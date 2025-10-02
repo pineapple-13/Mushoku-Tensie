@@ -1,0 +1,38 @@
+
+body{
+    padding: 0;
+    margin: 0;
+    background-color: black;
+}
+
+#ori{
+    width: 100%;
+    overflow: hidden;
+    background-color: black;
+    display: flex;
+    margin: auto;
+}
+
+#track{
+    display: flex;
+    gap: 10px;
+    animation: scroll 25s ease-in-out infinite alternate;
+    align-items: center;
+}
+
+#track img{
+    display: flex;
+    width: 300px;
+    height: auto;
+    margin: 1px;
+    border-radius: 10px;
+}
+
+@keyframes scroll{
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(-2510px);
+    }
+}
