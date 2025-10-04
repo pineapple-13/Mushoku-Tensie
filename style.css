@@ -276,3 +276,17 @@ h1{
     position: relative;
     top: -80px;
 }
+
+.chars{
+    height: 300px;
+}
+
+.characters{
+    height: 300px;
+
+}
+
+.pop-1{
+    width: 100%;
+    display: flex;
+}

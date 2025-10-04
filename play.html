@@ -3,50 +3,47 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bouncy Heading</title>
+  <title>Hover Expand with Flex Space</title>
   <style>
     body {
       background: #111;
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
-      margin: 0;
+      min-height: 100vh;
     }
 
-    .bounce-text {
+    .gallery {
       display: flex;
-      gap: 5px;
-      font-size: 3rem;
-      font-weight: bold;
-      color: #fff;
+      gap: 10px; /* space between images */
+      justify-content: center;
+      align-items: center;
+      transition: all 0.3s ease;
     }
 
-    .bounce-text span {
-      opacity: 0;
-      transform: translateY(-40px);
-      display: inline-block;
-      animation: bounceIn 0.6s ease-out forwards;  /* forwards = stay at final state */
+    .gallery img {
+      width: 100px;             /* thinner at rest */
+      aspect-ratio: 9 / 16;     /* portrait ratio */
+      object-fit: cover;
+      border-radius: 12px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      transform: scale(1);
     }
 
-    @keyframes bounceIn {
-      0%   { opacity: 0; transform: translateY(-40px); }
-      60%  { opacity: 1; transform: translateY(10px); }
-      80%  { transform: translateY(-5px); }
-      100% { opacity: 1; transform: translateY(0); }
+    .gallery img:hover {
+      width: 160px;             /* expand width */
+      transform: scale(1.2);    /* zoom a bit */
     }
-
-    /* stagger */
-    .bounce-text span:nth-child(1) { animation-delay: 0s; }
-    .bounce-text span:nth-child(2) { animation-delay: 0.1s; }
-    .bounce-text span:nth-child(3) { animation-delay: 0.2s; }
-    .bounce-text span:nth-child(4) { animation-delay: 0.3s; }
-    .bounce-text span:nth-child(5) { animation-delay: 0.4s; }
   </style>
 </head>
 <body>
-  <h2 class="bounce-text">
-    <span>H</span><span>e</span><span>l</span><span>l</span><span>o</span>
-  </h2>
+  <div class="gallery">
+    <img src="rudy.jpg" alt="Image 1">
+    <img src="roxy.jpg" alt="Image 2">
+    <img src="syl.jpg" alt="Image 3">
+    <img src="eris.jpg" alt="Image 4">
+  </div>
 </body>
 </html>
+
