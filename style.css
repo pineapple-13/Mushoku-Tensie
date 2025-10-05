@@ -277,16 +277,45 @@ h1{
     top: -80px;
 }
 
-.chars{
-    height: 300px;
+.pop{
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pop-in{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
 }
 
 .characters{
-    height: 300px;
-
+    height: 200px;
+    width: 50px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.4s ease;
+    border-radius: 10px;
 }
 
-.pop-1{
-    width: 100%;
-    display: flex;
+.chars{
+    height: 500px;
+    border-radius: 10px;
+    transition: width 0.4s ease;
+    transition: height 0.4s ease;
+}
+
+.chars, .characters:hover{
+    height: 500px;
+    width: 281.25px; 
+}
+
+#foot{
+    margin: 70px;
+    text-align: center;
 }

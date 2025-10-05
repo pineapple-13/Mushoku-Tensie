@@ -1,1 +1,42 @@
+.pop-in {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 400px;
+}
+
+.characters {
+  transition: all 0.3s ease; /* smooth spacing when width changes */
+  height: 200px;
+  width: 50px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+
+}
+
+.characters:hover{
+  height: 400px;
+  width: 225px;
+}
+
+.chars {
+  width: 50px; 
+  height: 400px;           /* default thinner width */
+  object-fit: cover;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: width 0.3s ease; /* smooth width change */
+  transition: height 0.3 ease;
+}
+
+.chars:hover {        /* expand width on hover */
+  height: 400px;
+  width: 225px;
+}
+
 
